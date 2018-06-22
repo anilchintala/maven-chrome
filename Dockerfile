@@ -22,6 +22,8 @@ RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.stor
 	&& ln -fs /opt/chromedriver-$CHROME_DRIVER_VERSION /usr/bin/chromedriver
   
 # Install English language
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
 RUN apt-get update -qqy \
     && apt-get install -y locales locales-all \
     && locale-gen en_US.UTF-8
